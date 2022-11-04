@@ -1,5 +1,10 @@
 import Fastify from "fastify";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 import config from "./config.json" assert { type: "json" };
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const fastify = Fastify();
 
