@@ -1,8 +1,9 @@
 import Fastify from "fastify";
+const config = require("./config.json");
 
 const fastify = Fastify();
 
-fastify.get("/", async (request, reply) => {
+fastify.get(`/${config.basePath}`, async (request, reply) => {
   return {};
 });
 
