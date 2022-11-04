@@ -1,16 +1,14 @@
-const fastify = require("fastify")();
+import Fastify from "fastify";
+
+const fastify = Fastify();
 
 fastify.get("/", async (request, reply) => {
   return {};
 });
 
-const start = async () => {
-  try {
-    await fastify.listen(3000);
-    console.info(`server listening on ${fastify.server.address().port}`);
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
+fastify.listen({ port: 3000 }, function (err, address) {
+  if (err) {
+    fastify.log.error(err)
+    process.exit(1)
   }
-};
-start();
+})
