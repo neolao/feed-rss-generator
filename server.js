@@ -1,5 +1,5 @@
 import Fastify from "fastify";
-const config = require("./config.json");
+import config from "./config.json" assert { type: "json" };
 
 const fastify = Fastify();
 
