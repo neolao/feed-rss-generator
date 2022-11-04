@@ -9,7 +9,7 @@
     "url": "git+https://github.com/neolao/feed-rss-generator.git"
   },
   "dependencies": {
+    "fastify": "^4.9.2"
   },
-  "scripts": {
-  }
+  "scripts": {}
 }

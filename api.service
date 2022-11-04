@@ -1,0 +1,11 @@
+[Unit]
+Description=API
+
+[Service]
+ExecStart=/home/neolao/feed-rss-generator/service.sh
+Restart=on-failure
+SuccessExitStatus=3 4
+RestartForceExitStatus=3 4
+
+[Install]
+WantedBy=multi-user.target
