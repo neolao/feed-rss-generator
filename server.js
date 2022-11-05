@@ -1,6 +1,7 @@
 import Fastify from "fastify";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import fs from "fs";
 import config from "./config.json" assert { type: "json" };
 
 const fastify = Fastify();
