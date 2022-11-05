@@ -3,9 +3,6 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 import config from "./config.json" assert { type: "json" };
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 const fastify = Fastify();
 
 fastify.get(`/${config.basePath}`, async (request, reply) => {
@@ -16,7 +13,8 @@ fastify.post(`/${config.basePath}/:name/items`, async (request, reply) => {
   const { name } = request.params;
   const { id, title, url, description } = request.body;
 
-  const directoryPath = `${__dirname}/feeds/`;
+  const currentDirectory = dirname(fileURLToPath(import.meta.url));
+  const directoryPath = `${currentDirectory}/feeds/`;
   const filePath = `${directoryPath}/${name}.xml`;
   await fs.promises.mkdir(directoryPath, { recursive: true });
 
