@@ -23,9 +23,9 @@ fastify.post(`/${config.basePath}/:name/items`, async (request, reply) => {
   <channel>
       <title>${name}</title>
       <item>
-        <title>${title}</title>
-        <link>${url}</link>
-        <description>${description}</description>
+        <title><![CDATA[${title}]]></title>
+        <link><![CDATA[${url}]]></link>
+        <description><![CDATA[${description}]]></description>
       </item>
   </channel>
   </rss>`;
