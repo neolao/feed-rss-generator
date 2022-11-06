@@ -15,7 +15,7 @@ async function updateFeed(name) {
 
   const feedsDirectory = `${currentDirectory}/feeds/`;
   const filePath = `${feedsDirectory}/${name}.xml`;
-  await fs.promises.mkdir(directoryPath, { recursive: true });
+  await fs.promises.mkdir(feedsDirectory, { recursive: true });
 
   const feedItems = [];
   for (const feedDataFile of feedDataFiles) {
